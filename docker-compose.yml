@@ -6,8 +6,6 @@ services:
     build: ./www
     expose:
       - "8000"
-    volumes:
-      - /home/project/www/static
     command: gunicorn -w 2 -b :8000 app:server
 
   nginx:
@@ -15,7 +13,5 @@ services:
     build: ./nginx
     ports:
       - "80:80"
-    volumes_from:
-      - app
     depends_on:
       - app
