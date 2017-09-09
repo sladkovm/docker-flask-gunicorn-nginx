@@ -1,9 +1,9 @@
-version: '2'
+version: '3'
 
 services:
   app:
     restart: always
-    build: ./www
+    build: ./flask_app
     expose:
       - "8000"
     command: gunicorn -w 2 -b :8000 app:server

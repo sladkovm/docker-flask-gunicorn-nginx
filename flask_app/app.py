@@ -8,7 +8,6 @@ server = Flask(__name__)
 
 
 app = dash.Dash(name='Bootstrap_docker_app',
-                sharing=True,
                 server=server,
                 csrf_protect=False)
 
