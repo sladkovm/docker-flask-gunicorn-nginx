@@ -4,9 +4,22 @@ services:
   app:
     restart: always
     build: ./flask_app
+    ports:
+      - "8000:8000"
     expose:
       - "8000"
-    command: gunicorn -w 2 -b :8000 app:server
+    command: gunicorn -w 1 -b :8000 app:server
+
+
+  api_server:
+    restart: always
+    build: ./flask_api
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+    command: gunicorn -w 1 -b :5000 app:app
+
 
   nginx:
     restart: always
@@ -15,3 +28,4 @@ services:
       - "80:80"
     depends_on:
       - app
+      - api_server

@@ -7,5 +7,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /home/project/flask_app
 
-EXPOSE  8000
-CMD gunicorn -w 2 --bind 0.0.0.0:8000 app:server
