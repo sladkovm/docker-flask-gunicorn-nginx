@@ -22,6 +22,8 @@ class Users(db.Model):
 
 @app.route("/")
 def api_endpoint():
+    users = Users.query.all()
+    print(users)
     return "This is API endpoint"
 
 

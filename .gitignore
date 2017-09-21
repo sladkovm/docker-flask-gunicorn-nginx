@@ -4,4 +4,4 @@ __pycache__
 
 .idea/
 .cache/
-instance/
+flask_api/instance/
