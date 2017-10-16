@@ -8,8 +8,6 @@ services:
     build: ./dash_app
     ports:
       - "8000:8000"
-    expose:
-      - "8000"
     command: gunicorn -w 1 -b :8000 app:server
 
 

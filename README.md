@@ -1,18 +1,14 @@
 # docker-flask-gunicorn-nginx
-Bootstrap example of a Flask app served via Gunicorn and Nginx using Docker conteiners
+Bootstrap example of a Flask/Dash app served via Gunicorn and Nginx using Docker containers
 
 
 ### Run
 
 /bin/bash run_docker.sh
 
-1. It will delete all running containers and kill all running docker process.
+1. It will kill all running docker processes.
 2. Will start all required containers in background
 
-### In your browser (assuming you run it on a local machine)
+### In your browser (assuming the docker-machine runs on 192.168.99.100)
 
-http://localhost - the app
-
-http://localhost/api - the API endpoint
-
-http://localhost/api/resource - the API resource
+http://192.168.99.100
