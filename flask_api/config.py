@@ -7,6 +7,8 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'dev'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://docker_flask@localhost/docker_flask_db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 
 class ProductionConfig(Config):

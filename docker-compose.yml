@@ -1,9 +1,11 @@
 version: '3'
 
 services:
-  app:
+
+  dash_app:
+    container_name: dash_app
     restart: always
-    build: ./flask_app
+    build: ./dash_app
     ports:
       - "8000:8000"
     expose:
@@ -11,21 +13,11 @@ services:
     command: gunicorn -w 1 -b :8000 app:server
 
 
-  api_server:
-    restart: always
-    build: ./flask_api
-    ports:
-      - "5000:5000"
-    expose:
-      - "5000"
-    command: gunicorn -w 1 -b :5000 app:app
-
-
   nginx:
+    container_name: nginx
     restart: always
     build: ./nginx
     ports:
       - "80:80"
     depends_on:
-      - app
-      - api_server
+      - dash_app
