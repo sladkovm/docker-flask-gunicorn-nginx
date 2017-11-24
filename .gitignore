@@ -4,4 +4,4 @@ __pycache__
 
 .idea/
 .cache/
-flask_api/instance/
+.DS_Store
