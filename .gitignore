@@ -1,7 +1,7 @@
 
 __pycache__
 
-
+.vscode/
 .idea/
 .cache/
 .DS_Store
