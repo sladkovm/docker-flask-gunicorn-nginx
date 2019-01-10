@@ -5,13 +5,13 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 from config import config_app
 from layout import app_layout, make_header, make_main
-from plots import bar_plot
+from plots import bar_plot, scatter_plot
 
 import sys
-import logging
-logger = logging.getLogger(__name__)
-logger.addHandler(logging.StreamHandler(stream=sys.stderr))
-logger.setLevel(logging.DEBUG)
+# import logging
+# logger = logging.getLogger(__name__)
+# logger.addHandler(logging.StreamHandler(stream=sys.stderr))
+# logger.setLevel(logging.DEBUG)
 
 
 server = Flask(__name__)
@@ -30,20 +30,24 @@ app = config_app(app, debug=True)
 app.layout = app_layout(header=make_header(), main=make_main(bar_plot))
 
 
-@app.callback(Output('page_main', 'children'), [Input('url', 'pathname')])
+@app.callback(Output('page-main', 'children'), [Input('url', 'pathname')])
 def routing(pathname):
     """Very basic router
 
     This callback function will read the current url
-    and pass it's value to the html element with id='header'
-    and set it to the propery 'children'
+    and based on pathname value will populate the children of the page-main
 
     Returns:
-        pathname - will pass it to the html element with id='header'
+        html.Div
     """
-    logger.debug(pathname)
+    app.server.logger.info(pathname)
 
-    return make_main(bar_plot)
+    if pathname == '/':
+        rv = make_main(bar_plot)
+    else:
+        rv = make_main(scatter_plot)
+
+    return rv
 
 
 if __name__ == '__main__':

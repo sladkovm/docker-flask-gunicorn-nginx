@@ -2,5 +2,6 @@ dash
 dash-core-components
 dash-html-components
 dash-renderer
+numpy
 gunicorn>=19.7.1
 
