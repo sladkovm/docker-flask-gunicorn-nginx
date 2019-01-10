@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e3f3a16826c557eec05d7b40eba8be42e320aea1c23f2d25fe61818a129b1810"
+            "sha256": "6cc29d4b81c38a878b5d3e8a71d7a7323bd8601c91fb275b14d666f4bf83555a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -44,10 +44,25 @@
             "index": "pypi",
             "version": "==0.35.1"
         },
+        "dash-core-components": {
+            "hashes": [
+                "sha256:36c6fc2e4e452c37021ff067c6df033e749561fafd95af9500823d1f470b5995"
+            ],
+            "index": "pypi",
+            "version": "==0.42.1"
+        },
+        "dash-html-components": {
+            "hashes": [
+                "sha256:e5d6247887741bf49038eae82f716be6a8b16b7c7b0b8e4a769bb4608feb0b8b"
+            ],
+            "index": "pypi",
+            "version": "==0.13.4"
+        },
         "dash-renderer": {
             "hashes": [
                 "sha256:6a2e4d6410e1c4a9577a0aca27b95a1ac77024aae0c8b9c271a8f9518c697b89"
             ],
+            "index": "pypi",
             "version": "==0.16.1"
         },
         "decorator": {
@@ -69,6 +84,14 @@
                 "sha256:468693f4ddd11ac6a41bca4eb5f94b071b763256d54136f77957cfee635badb3"
             ],
             "version": "==1.4.0"
+        },
+        "gunicorn": {
+            "hashes": [
+                "sha256:aa8e0b40b4157b36a5df5e599f45c9c76d6af43845ba3b3b0efe2c70473c2471",
+                "sha256:fa2662097c66f920f53f70621c6c58ca4a3c4d3434205e608e121b5b3b71f4f3"
+            ],
+            "index": "pypi",
+            "version": "==19.9.0"
         },
         "idna": {
             "hashes": [
@@ -309,9 +332,10 @@
         },
         "wrapt": {
             "hashes": [
-                "sha256:d4d560d479f2c21e1b5443bbd15fe7ec4b37fe7e53d335d3b9b0a7b1226fe3c6"
+                "sha256:29e019b04645c75b4002e6037caf1b8d53580b8e6ae1b4291c4961926cbf7ca3",
+                "sha256:e03f19f64d81d0a3099518ca26b04550026f131eced2e76ced7b85c6b8d32128"
             ],
-            "version": "==1.10.11"
+            "version": "==1.11.0"
         }
     }
 }

@@ -38,27 +38,4 @@ def config_app(app, **kwargs):
     })
 
     return app
-
-
-def app_layout(header=None, main=None, footer=None):
-    """Returns app layout with the following elements:
-        app-layout: main div, should not be a target of an ouput callback
-        page-content: container div, target for an ouput callback
-        url: Location, target of an input callback
-    """
-
-    rv = html.Div(
-        id='app-layout',
-        children=[
-            dcc.Location(id='url', refresh=False),
-            html.Div(id='page-content', className = 'container-fluid',
-            children=[
-                html.Div(header, id='page-header'),
-                html.Div(main, id='page-main'),
-                html.Div(footer, id='page-footer')
-            ]
-            )
-        ]
-    )
-
-    return rv
+    

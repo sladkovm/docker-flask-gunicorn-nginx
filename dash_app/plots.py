@@ -1,10 +1,7 @@
-colors = {
-    'background': '#111111',
-    'text': '#7FDBFF'
-}
+from style import colors
 
-figures = {
-    "fig1": {
+
+bar_plot =  {
                 'data': [
                     {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
                     {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
@@ -12,7 +9,7 @@ figures = {
                 'layout': {
                     'images': [
                         {
-                            'source':"http://192.168.99.100/static/api_logo_pwrdBy_strava_horiz_light.png",
+                            'source':'/static/api_logo_pwrdBy_strava_horiz_light.png',
                             'xref':"paper",
                             'yref':"paper",
                             'x':1,
@@ -29,4 +26,3 @@ figures = {
                     }
                 }
             }
-}

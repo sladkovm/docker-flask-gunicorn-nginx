@@ -8,6 +8,10 @@ pylint = "*"
 
 [packages]
 dash = "*"
+dash-core-components = "*"
+dash-html-components = "*"
+dash-renderer = "*"
+gunicorn = ">=19.7.1"
 
 [requires]
 python_version = "3.6"
