@@ -1,15 +1,31 @@
-# docker-flask-gunicorn-nginx
-Bootstrap example of a Flask/Dash app served via Gunicorn and Nginx using Docker containers
+# Blueprint for docker-flask-gunicorn-nginx web application
+Bootstrap example of a *Flask/Dash* app served via *Gunicorn* and *Nginx* using Docker containers
 
 Guildeline article can be found at https://sladkovm.github.io/webdev/2017/10/16/Deploying-Plotly-Dash-in-a-Docker-Container-on-Digitital-Ocean.html
 
-### Run
+## Run
 
-/bin/bash run_docker.sh
+```bash
+make build
+```
 
-1. It will kill all running docker processes.
-2. Will start all required containers in background
+In your browser (assuming the docker-machine runs on 192.168.99.100) go to:
 
-### In your browser (assuming the docker-machine runs on 192.168.99.100)
+    http://192.168.99.100
 
-http://192.168.99.100
+To clean up the container mess, run
+```
+make clean
+```
+
+It will shut down all container and remove all images
+
+## Prominent features:
+
+1. Dockerized application orchestrated by docker-compose
+2. Gunicorn as a WSGI and Nginx as a reverse proxy are included as a service
+3. Nginx is configured to serve the static files, e.g. images, css etc.
+4. Example of routing implementation in *Dash* app is shown
+5. Build process uses *requirements.txt*, but *Pipenv* files are included to ease the development process
+6. Bootstrap css is included
+7. Standard Single Page App Layout with Header, Main and Footer is set up
