@@ -29,14 +29,26 @@ def app_layout(header=None, main=None, footer=None):
 def make_header():
     """Returns a div with a header"""
     rv = html.Nav(
-        className='navbar navbar-expand-md navbar-dark bg-dark',
+        className='navbar navbar-expand-md navbar-light bg-light',
         children = [
             # Title on the left
-            html.Span("Strava Poster",
+            html.Span(html.A("Strava Poster",
+                             href='/',
+                             className='navbar-brand'),
                       className='navbar-brand mr-auto w-50'),
             # Links on the right
             html.Ul(
                 children = [
+                    html.Li(html.A('Bar',
+                               href='/bar',
+                               className='nav-link lead'
+                            ),
+                            className = 'nav-item'),
+                    html.Li(html.A('Scatter',
+                               href='/scatter',
+                               className='nav-link lead'
+                            ),
+                            className = 'nav-item'),
                     html.Li(html.A('Blog',
                                href='https://sladkovm.github.io/',
                                className='nav-link lead'

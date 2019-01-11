@@ -27,7 +27,7 @@ app = config_app(app, debug=True)
 
 # Generate app layoute with 3 div elements: page-header, page-main, page-footer.
 # Content of each div is a function input
-app.layout = app_layout(header=make_header(), main=make_main(bar_plot))
+app.layout = app_layout(header=make_header())
 
 
 @app.callback(Output('page-main', 'children'), [Input('url', 'pathname')])
@@ -42,10 +42,12 @@ def routing(pathname):
     """
     app.server.logger.info(pathname)
 
-    if pathname == '/':
+    if pathname == '/bar':
         rv = make_main(bar_plot)
-    else:
+    elif pathname == '/scatter':
         rv = make_main(scatter_plot)
+    else:
+        rv = make_main({'layout': {'title': 'empty plot: click on a Bar or Scatter link'}})
 
     return rv
 
