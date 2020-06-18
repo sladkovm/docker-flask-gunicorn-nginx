@@ -17,13 +17,10 @@ import sys
 server = Flask(__name__)
 
 
-app = dash.Dash(name='Bootstrap_docker_app',
-                server=server,
-                static_folder='static',
-                csrf_protect=False)
+app = dash.Dash(name='Bootstrap_docker_app', server=server)
 
 # Add css, js, container div with id='page-content' and location with id='url'
-app = config_app(app, debug=True)
+# app = config_app(app, debug=True)
 
 # Generate app layoute with 3 div elements: page-header, page-main, page-footer.
 # Content of each div is a function input

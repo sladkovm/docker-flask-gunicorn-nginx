@@ -1,4 +1,4 @@
-FROM python:3.6.7
+FROM python:3.7.7-slim-buster
 
 RUN mkdir -p /home/project/dash_app
 WORKDIR /home/project/dash_app
